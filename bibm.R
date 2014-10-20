@@ -12,7 +12,10 @@ bibm <- function(data,researcher ="researcher", totct = "tc", pbsr = "source",
         # journal the article has been published).
         # pyear is a variable name that represents the publication year of each
         # paper.
+        # This function will put researcher's article in an decreasing order 
+        # by citations
         h <- 0; g <- 0; r <- 0; y <- 0; allc <- 0
+        data <- data[order(data[,totct],decreasing = TRUE),]
         data[,pbsr] <- as.factor(data[,pbsr])
         h <- Hindex(data); g <- g_index(data); y <- 2014 - min(data[,pyear]) +1
         r <- rindex(data); allc <- sum(data[,totct])
@@ -22,8 +25,8 @@ bibm <- function(data,researcher ="researcher", totct = "tc", pbsr = "source",
         qqq$number <- length(data[,totct]); qqq$year1st <- y
         qqq$journals <- length(unique(data[,pbsr])); qqq$vip <- jnal(data)
         qqq$avc <- allc/length(data[,totct]);qqq$allc <- allc
-        qqq$rhmax <- rmhindex(data)[1]
-        qqq$rhmin <- rmhindex(data)[2]
-        qqq$rhavg <- rmhindex(data)[3]
+        #qqq$rhmax <- rmhindex(data)[1]
+        #qqq$rhmin <- rmhindex(data)[2]
+        #qqq$rhavg <- rmhindex(data)[3]
         return(qqq)
 }
