@@ -1,5 +1,6 @@
 # This is the core function of the h-index function. It will computes the exact 
-#  Hirsch's defined h-index.
+# Hirsch's defined h-index.
+# Make sure that there is only one researcher in the data.
 
 Hindex <- function(data, totct = "tc") {
         a <- vector()
