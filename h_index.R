@@ -14,9 +14,6 @@ h_index <- function(data, totct = "tc") {
                 a[i] <- ifelse(length(which(tlc >= i)) == i, i, 0)
                 b[i] <- ifelse(length(which(tlc >= i)) <= i, i, length(tlc))
         }
-       # for (i in 1:length(tlc)) {
-               # b[i] <- ifelse(length(which(tlc >= i)) <= )
-       # }
         q <- sum(a)
         h <- ifelse(q == 0, min(b)-1,q)
         h
