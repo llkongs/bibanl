@@ -26,6 +26,7 @@ g_index <- function(data, totct = "tc") {
         }
         c <- vector()
         x <- data[,totct]
+        data <- data[order(x,decreasing = TRUE), ]
         for (i in 1:length(x)) c[i] <- ifelse(sum(x[1:i]) >= i^2, 1, 0)
         a <- ifelse(sum(c) < sqrt(sum(x[1:Hindex(data)])), floor(sqrt(sum(x))), sum(c) )
         return(a)
