@@ -14,7 +14,6 @@ This is for bibliometrical analysis.
 
 - first list
 - second list
-- third list
  
 
 
