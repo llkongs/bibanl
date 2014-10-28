@@ -11,10 +11,8 @@ This is for bibliometrical analysis.
 ## Secondary heading
 ### Tertiary heading
 
-
 - first list
 - second list
- 
 
 
 1. list1
